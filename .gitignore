@@ -1,7 +1,7 @@
-# Ignorar carpeta data
+
 data/
 
 # Node js
-Node_modules/
+node_modules/
 .env
 /generated/prisma
