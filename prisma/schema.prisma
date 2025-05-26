@@ -4,3 +4,64 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Universidad {
+  id     Int    @id @map("universida")
+  nombre String
+}
+
+model Grado {
+  id     Int    @id
+  nombre String
+}
+
+model Facultad {
+  id     Int    @id
+  nombre String
+}
+
+model Especialidad {
+  id     Int    @id
+  nombre String
+}
+
+model Localidad {
+  id         Int    @id @map("codigo")
+  ciudad     String
+  provincia  String
+  paisDelC   String @map("pais_del_c")
+}
+
+model Pais {
+  id     Int    @id @map("pais")
+  nombre String
+}
+
+model Plan {
+  id             Int    @id @map("plan")
+  especialidadId Int
+  nombre         String?
+}
+
+model Orientacion {
+  id             Int    @id @map("orientacion")
+  especialidadId Int
+  planId         Int
+  nombre         String
+}
+
+model Materia {
+  id             Int    @id @map("materia")
+  especialidadId Int
+  planId         Int
+  nombre         String
+  ano            Int?
+}
