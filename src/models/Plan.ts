@@ -13,4 +13,12 @@ export class Plan implements PlanAtributos {
     get id(): number { return this._id }
     get nombre(): string { return this._nombre }
     get especialidadId(): number { return this._especialidadId }
+
+    toPlainObject(): PlanAtributos {
+        return {
+            id: this.id,
+            nombre: this.nombre,
+            especialidadId: this.especialidadId,
+        };
+    }
 }
