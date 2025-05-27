@@ -4,7 +4,7 @@ import { UniversidadService } from "../src/services/UniversidadService";
 test('deberia crear y gurdar una universidad en la abse de datos', async () => {
     const nuevaUniversidad = new Universidad(
         1,
-        "UTN"
+        "Universidad Nacional de Buenos Aires"
     );
     const universidadCreada = await UniversidadService.crearUniversidad(nuevaUniversidad);
 

@@ -11,4 +11,11 @@ export class Pais implements PaisAtributos {
 
     get id(): number { return this._id }
     get nombre(): string { return this._nombre }
+
+    toPlainObject(): PaisAtributos {
+        return {
+            id: this._id,
+            nombre: this._nombre
+        }
+    }
 }
