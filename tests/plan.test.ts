@@ -1,6 +1,6 @@
 import { Plan } from "../src/models/Plan"
 
-test("debería crear una instancia de la clase pais y leer sus atributos", () => {
+test("debería crear una instancia de la clase plan y leer sus atributos", () => {
     const plan = new Plan(
         1,
         "Plan 2009",
