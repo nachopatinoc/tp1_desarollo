@@ -11,5 +11,12 @@ export class Grado implements GradoAtributos {
 
     get id(): number { return this._id }
     get nombre(): string { return this._nombre }
+
+    toPlainObject(): GradoAtributos {
+        return {
+            id: this.id,
+            nombre: this.nombre,
+        };
+    }
 }
 
