@@ -17,4 +17,14 @@ export class Localidad implements LocalidadAtributos {
     get ciudad():string { return this._ciudad; }
     get provincia():string { return this._provincia; }
     get paisDelC():string { return this._paisDelC; }
+
+    toPlainObject(): LocalidadAtributos {
+        return {
+            id: this.id,
+            ciudad: this.ciudad,
+            provincia: this.provincia,
+            paisDelC: this.paisDelC,
+        };
+    }
 }
+
