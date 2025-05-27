@@ -15,5 +15,4 @@ test("debería importar de universidad.xml y parsea los datos a un objeto JS", a
     expect(universidades.length).toBeGreaterThan(0);
     expect(universidades[0]).toHaveProperty("universida");
     expect(universidades[0]).toHaveProperty("nombre");
-
 })
