@@ -2,17 +2,17 @@ import { BaseValidator } from "./BaseValidator";
 
 export class UniversidadValidator extends BaseValidator {
     static validate(
+        id: number,
         nombre: string,
-        sigla: string,
-        id?:number|undefined
     ): void {
         
+        this.validateRequired(id, "id")
         this.validateRequired(nombre, "nombre")
-        this.validateRequired(sigla, "sigla")
-       
+
             
+        this.validateNumber(id, "id")
+        this.validatePositive(id, "id")
         this.validateString(nombre, "nombre")
-        this.validateString(sigla, "sigla")
         
     }
 }

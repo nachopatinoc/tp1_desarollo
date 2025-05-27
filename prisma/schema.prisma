@@ -19,17 +19,17 @@ model Universidad {
 }
 
 model Grado {
-  id     Int    @id
+  id     Int    @id @map("grado")
   nombre String
 }
 
 model Facultad {
-  id     Int    @id
+  id     Int    @id @map("facultad")
   nombre String
 }
 
 model Especialidad {
-  id     Int    @id
+  id     Int    @id @map("especialidad")
   nombre String
 }
 

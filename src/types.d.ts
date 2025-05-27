@@ -1,95 +1,45 @@
-export type sexo = "M" | "F";
-export type tipoDocumento = "DNI" | "LibretaCivica" | "LibretaEnrolamiento" | "Pasaporte"
 
-export interface AlumnosAtributos {
-    apellido: string;
-    nombre: string;
-    nroDocumento: string;
-    tipoDocumento: tipoDocumento;
-    fechaNacimiento: string;
-    sexo: sexo;
-    nroLegajo: number;
-    fechaIngreso: Date;
-}
-
-export interface FacultadAtributos {
-    nombre: string;
-    abreviatura: string;
-    directorio: string;
-    sigla: string;
-    ciudad: string;
-    codigoPostal: string;
-    telefono: string;
-    domicilio: string;
-    email: string;
-    contacto: string;
-}
 
 export interface UniversidadAtributos {
-    nombre: string;
-    sigla: string;
-    id?: number;
+  id: number;         // ID viene como <universida> en XML
+  nombre: string;     // Campo obligatorio
 }
 
-export interface CargoAtributos {
-    nombre: string;
-    puntos: number;
-    categoriaCargo: CategoriaCargoAtributos;
-    tipoDedicacion: TipoDedicacionAtributos;
-}
 
-export interface CategoriaCargoAtributos {
-    nombre: string;
-}
-
-export interface TipoDedicacionAtributos {
-    nombre: string;
-    observacion: string;
-}
-
-export interface AutoridadAtributos {
-    apellido: string;
-    nombre: string;
-    cargo: CargoAtributos;
-    telefono: string;
-    email: string;
+export interface GradoAtributos {
+  id: number;       // <grado> en XML
+  nombre: string;
 }
 
 export interface EspecialidadAtributos {
-    nombre: string;
-    letra: string;
-    observacion: string;
+  id: number;         // <especialidad>
+  nombre: string;
 }
 
 export interface OrientacionAtributos {
-    nombre: string;
-    especialidad: EspecialidadAtributos;
-    plan: PlanAtributos;
-    materia: MateriaAtributos;
-}
-
-export interface GradoAtributos {
-    nombre: string;
-}
-
-export interface MateriaAtributos {
-    nombre: string;
-    codigo: string;
-    observacion: string;
-}
-
-export interface DepartamentoAtributos {
-    nombre: string;
-}
-
-export interface TipoEspecialidadAtributos  {
-    nombre : string;
-    nivel : string;
+  id: number;             // <orientacion>
+  nombre: string;
+  especialidadId: number; // relación por ID
+  planId: number;
 }
 
 export interface PlanAtributos {
-    nombre : string;
-    fechaInicio : string;
-    fechaFin : string;
-    observacion : string;
+  id: number;       // <plan>
+  nombre: string;   // puede estar vacío
+  especialidadId: number;
+}
+
+export interface MateriaAtributos {
+  id: number;               // <materia>
+  nombre: string;
+  ano?: number | null;      // opcional
+  planId: number;
+  especialidadId: number;
+}
+
+export interface LocalidadAtributos {
+  id: number;            // <codigo>
+  ciudad: string;
+  provincia: string;
+  paisDelC: string;      // <pais_del_c>
 }

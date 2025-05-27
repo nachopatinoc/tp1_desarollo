@@ -17,6 +17,13 @@ export class BaseValidator {
         }
     }
 
+    protected static validatePositive(valor: number, campo: string): void {
+        if (valor <= 0) {
+    throw new Error(`El campo ${campo} debe ser un número positivo`);
+        }
+    }
+
+
     protected static validateBoolean(value: any, fieldName: string): void {
         if (typeof value !== 'boolean') {
             throw new Error(`El campo ${fieldName} debe ser un booleano`);
