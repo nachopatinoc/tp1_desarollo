@@ -40,3 +40,13 @@ export interface LocalidadAtributos {
     provincia: string;
     paisDelC: string;
 }
+
+export interface PaisAtributos {
+    id: number;
+    nombre: string;
+}
+
+export interface FacultadAtributos {
+    id: number;
+    nombre: string;
+}

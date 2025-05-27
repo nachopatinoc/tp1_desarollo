@@ -1,18 +1,18 @@
-import { type OrientacionAtributos, type EspecialidadAtributos, type PlanAtributos, type MateriaAtributos } from "../types";
+import { type OrientacionAtributos } from "../types";
 import { OrientacionValidator } from "../validators/OrientacionValidator";
 
 export class Orientacion implements OrientacionAtributos {
     constructor(
+        private readonly _id: number,
         private readonly _nombre: string,
-        private readonly _especialidad: EspecialidadAtributos,
-        private readonly _plan: PlanAtributos,
-        private readonly _materia: MateriaAtributos,
+        private readonly _especialidadId: number,
+        private readonly _planId: number
     ) {
-        OrientacionValidator.validate(_nombre, _especialidad, _plan, _materia)
+        OrientacionValidator.validate(_id, _nombre, _especialidadId, _planId)
     }
 
+    get id(): number { return this._id }
     get nombre(): string { return this._nombre }
-    get especialidad(): EspecialidadAtributos { return this._especialidad }
-    get plan(): PlanAtributos { return this._plan }
-    get materia(): MateriaAtributos { return this._materia }
+    get especialidadId(): number { return this._especialidadId }
+    get planId(): number { return this._planId }
 }

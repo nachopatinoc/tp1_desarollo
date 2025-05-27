@@ -5,14 +5,11 @@ export class UniversidadValidator extends BaseValidator {
         id: number,
         nombre: string,
     ): void {
-        
         this.validateRequired(id, "id")
         this.validateRequired(nombre, "nombre")
 
-            
         this.validateNumber(id, "id")
         this.validatePositive(id, "id")
         this.validateString(nombre, "nombre")
-        
     }
 }
