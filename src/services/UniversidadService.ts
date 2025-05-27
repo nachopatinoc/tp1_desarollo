@@ -8,15 +8,4 @@ export class UniversidadService {
         return this.universidadRepository.crear(universidad);
     }
 
-    static obtenerUniversidadPorId(id: number): Promise<UniversidadAtributos | null> {
-        return this.universidadRepository.buscarPorId(id);
-    }
-
-    static actualizarUniversidad(id: number, nuevosDatos: Partial<UniversidadAtributos>): Promise<UniversidadAtributos> {
-        return this.universidadRepository.actualizar(id, nuevosDatos);
-    }
-
-    static eliminarUniversidad(id: number): Promise<void> {
-        return this.universidadRepository.eliminar(id);
-    }
 }
