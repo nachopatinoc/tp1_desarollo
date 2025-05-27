@@ -2,19 +2,16 @@ import { BaseValidator } from "./BaseValidator";
 
 export class PlanValidator extends BaseValidator {
     static validate(
+        id: number,
         nombre: string,
-        fechaInicio: string,
-        fechaFin: string,
-        observacion: string
+        especialidadId: number
     ): void {
+        this.validateRequired(id, "id")
         this.validateRequired(nombre, "nombre")
-        this.validateRequired(fechaInicio, "fechaInicio")
-        this.validateRequired(fechaFin, "fechaFin")
-        this.validateRequired(observacion, "observacion")
+        this.validateRequired(especialidadId, "especialidadId")
 
+        this.validateNumber(id, "id")
         this.validateString(nombre, "nombre")
-        this.validateString(fechaInicio, "fechaInicio")
-        this.validateString(fechaFin, "fechaFin")
-        this.validateString(observacion, "observacion")
+        this.validateNumber(especialidadId, "especialidadId")
     }
 }

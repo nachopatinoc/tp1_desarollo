@@ -1,22 +1,20 @@
-import { Especialidad } from "../models/Especialidad";
-import { Materia } from "../models/Materia";
-import { EspecialidadAtributos, MateriaAtributos, PlanAtributos } from "../types";
 import { BaseValidator } from "./BaseValidator";
 
 export class OrientacionValidator extends BaseValidator {
     static validate(
+        id: number,
         nombre: string,
-        especialidad: EspecialidadAtributos,
-        plan: PlanAtributos,
-        materia: MateriaAtributos
+        planId: number,
+        especialidadId: number,
     ): void {
+        this.validateRequired(id, "id")
         this.validateRequired(nombre, "nombre")
-        this.validateRequired(especialidad, "especialidad")
-        this.validateRequired(plan, "plan")
-        this.validateRequired(materia, "materia")
+        this.validateRequired(especialidadId, "especialidadId")
+        this.validateRequired(planId, "planId")
 
+        this.validateNumber(id, "id")
         this.validateString(nombre, "nombre")
-        this.validateInstance(especialidad, "especialidad", Especialidad)
-        this.validateInstance(materia, "materia", Materia)
+        this.validateNumber(planId, "planId")
+        this.validateNumber(especialidadId, "especialidadId")
     }
 }
