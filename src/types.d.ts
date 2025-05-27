@@ -1,45 +1,45 @@
 
 
 export interface UniversidadAtributos {
-  id: number;         // ID viene como <universida> en XML
-  nombre: string;     // Campo obligatorio
+  id: number;         
+  nombre: string;     
 }
 
 
 export interface GradoAtributos {
-  id: number;       // <grado> en XML
+  id: number;       
   nombre: string;
 }
 
 export interface EspecialidadAtributos {
-  id: number;         // <especialidad>
+  id: number;        
   nombre: string;
 }
 
 export interface OrientacionAtributos {
-  id: number;             // <orientacion>
+  id: number;             
   nombre: string;
-  especialidadId: number; // relación por ID
+  especialidadId: number; 
   planId: number;
 }
 
 export interface PlanAtributos {
-  id: number;       // <plan>
-  nombre: string;   // puede estar vacío
+  id: number;       
+  nombre: string;   
   especialidadId: number;
 }
 
 export interface MateriaAtributos {
-  id: number;               // <materia>
+  id: number;               
   nombre: string;
-  ano?: number | null;      // opcional
+  ano?: number | null;     
   planId: number;
   especialidadId: number;
 }
 
 export interface LocalidadAtributos {
-  id: number;            // <codigo>
+  id: number;            
   ciudad: string;
   provincia: string;
-  paisDelC: string;      // <pais_del_c>
+  paisDelC: string;      
 }
