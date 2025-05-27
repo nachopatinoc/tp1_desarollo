@@ -17,36 +17,4 @@ export abstract class BaseRepository<T> {
         }
     }
 
-    async buscarPorId(id: number): Promise<T | null> {
-        try {
-            const entidad = await this.model.findUnique({ where: { id } });
-            if (!entidad) throw new Error(`No se encontró la entidad con el id ${id}`);
-            return entidad;
-        } catch (error: any) {
-            throw new Error(`Error al obtener la entidad con el id ${id}: ${error}`);
-        }
-    }
-
-    async actualizar(id: number, nuevosDatos: Partial<T>): Promise<T> {
-        try {
-            const entidadActualizada = await this.model.update({
-                where: { id },
-                data: nuevosDatos,
-            });
-            if (!entidadActualizada) throw new Error(`No se encontró la entidad con el id ${id}`);
-            return entidadActualizada;
-        } catch (error: any) {
-            throw new Error(`Error al actualizar datos de la entidad: ${error}`);
-        }
-    }
-
-    async eliminar(id: number): Promise<void> {
-        try {
-            await this.model.delete({
-                where: { id },
-            });
-        } catch (error: any) {
-            throw new Error(`Error al eliminar la entidad: ${error}`);
-        }
-    }
 }

@@ -1,6 +1,6 @@
 export interface UniversidadAtributos {
-    id: number;         
-    nombre: string;     
+    id: number;
+    nombre: string;
 }
 
 export interface GradoAtributos {
@@ -9,20 +9,20 @@ export interface GradoAtributos {
 }
 
 export interface EspecialidadAtributos {
-    id: number;    
+    id: number;
     nombre: string;
 }
 
 export interface OrientacionAtributos {
-    id: number;             
+    id: number;
     nombre: string;
-    especialidadId: number; 
+    especialidadId: number;
     planId: number;
 }
 
 export interface PlanAtributos {
-    id: number;       
-    nombre: string;   
+    id: number;
+    nombre: string;
     especialidadId: number;
 }
 
@@ -35,8 +35,8 @@ export interface MateriaAtributos {
 }
 
 export interface LocalidadAtributos {
-    id: number;           
+    id: number;
     ciudad: string;
     provincia: string;
-    paisDelC: string;   
+    paisDelC: string;
 }
