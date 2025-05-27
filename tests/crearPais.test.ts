@@ -1,7 +1,7 @@
 import { Pais } from "../src/models/Pais";
 import { PaisService } from "../src/services/PaisService";
 
-test('deberia crear y gurdar una universidad en la abse de datos', async () => {
+test('deberia crear y gurdar una país en la base de datos', async () => {
     const nuevoPais = new Pais(
         1,
         "AFGANISTAN"

@@ -1,7 +1,7 @@
 import { Materia } from "../src/models/Materia";
 import { MateriaService } from "../src/services/MateriasService";
 
-test('deberia crear y gurdar una universidad en la base de datos', async () => {
+test('deberia crear y gurdar una materia en la base de datos', async () => {
     const nuevaMateria = new Materia(
         8,
         65,
