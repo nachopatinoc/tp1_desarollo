@@ -1,4 +1,4 @@
-import { Localidad } from "../src/models/Localidad";
+import { Localidad } from "../src/models/Localidad"
 
 test("deberia crear una instacia de la clase localidad y leer sus atributos", () => {
     const localidad = new Localidad(
