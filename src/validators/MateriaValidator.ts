@@ -1,13 +1,17 @@
 import { BaseValidator } from './BaseValidator';
 
 export class MateriaValidator extends BaseValidator {
-    static validate(nombre: string, codigo: string, observacion: string): void {
+    static validate(id: number, nombre: string, ano: number | null, planId: number, especialidadId: number): void {
+        this.validateRequired(id, 'id');
         this.validateRequired(nombre, 'nombre');
-        this.validateRequired(codigo, 'código');
-        this.validateRequired(observacion, 'observación');
+        this.validateRequired(ano, 'año');
+        this.validateRequired(planId, 'planId');
+        this.validateRequired(especialidadId, 'especialidadId');
 
+        this.validateNumber(id, 'id');
         this.validateString(nombre, 'nombre');
-        this.validateString(codigo, 'código');
-        this.validateString(observacion, 'observación');
+        this.validateNumber(ano, 'año');
+        this.validateNumber(planId, 'planId');
+        this.validateNumber(especialidadId, 'especialidadId');
     }
 }
