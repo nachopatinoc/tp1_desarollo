@@ -3,19 +3,19 @@ import { UniversidadValidator } from "../validators/UniversidadValidator";
 
 export class Universidad implements UniversidadAtributos {
     constructor(
+        private readonly _id: number,
         private readonly _nombre: string,
-        private readonly _sigla: string,
     ) {
-        UniversidadValidator.validate(_nombre, _sigla)
+        UniversidadValidator.validate(_id, _nombre)
     }
 
+    get id(): number { return this._id }
     get nombre(): string { return this._nombre }
-    get sigla(): string { return this._sigla }
 
     toPlainObject(): UniversidadAtributos {
         return {
+            id: this.id,
             nombre: this.nombre,
-            sigla: this.sigla,
         };
     }
 }
