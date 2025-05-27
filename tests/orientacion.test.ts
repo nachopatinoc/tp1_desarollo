@@ -1,6 +1,6 @@
 import { Orientacion } from "../src/models/Orientacion"
 
-test("debería crear una instancia de la clase pais y leer sus atributos", () => {
+test("debería crear una instancia de la clase orientacion y leer sus atributos", () => {
     const orientacion = new Orientacion(
         1,
         "Analista de Sistemas",
