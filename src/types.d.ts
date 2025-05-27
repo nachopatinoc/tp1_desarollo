@@ -40,29 +40,3 @@ export interface LocalidadAtributos {
     provincia: string;
     paisDelC: string;   
 }
-
-export interface EspecialidadAtributos {
-    id: number;        
-    nombre: string;
-}
-
-export interface OrientacionAtributos {
-    id: number;             
-    nombre: string;
-    especialidadId: number; 
-    planId: number;
-}
-
-export interface PlanAtributos {
-    id: number;       
-    nombre: string;   
-    especialidadId: number;
-}
-
-export interface MateriaAtributos {
-    id: number;               
-    nombre: string;
-    ano?: number | null;     
-    planId: number;
-    especialidadId: number;
-}
