@@ -15,4 +15,13 @@ export class Orientacion implements OrientacionAtributos {
     get nombre(): string { return this._nombre }
     get especialidadId(): number { return this._especialidadId }
     get planId(): number { return this._planId }
+
+    toPlainObject(): OrientacionAtributos {
+        return {
+            id: this.id,
+            nombre: this.nombre,
+            especialidadId: this.especialidadId,
+            planId: this.planId
+        };
+    }
 }
