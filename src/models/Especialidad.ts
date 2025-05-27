@@ -12,4 +12,10 @@ export class Especialidad implements EspecialidadAtributos {
     get id(): number { return this._id }
     get nombre(): string { return this._nombre }
 
+    toPlainObject() {
+        return {
+            id: this.id,
+            nombre: this.nombre
+        };
+    }
 }
