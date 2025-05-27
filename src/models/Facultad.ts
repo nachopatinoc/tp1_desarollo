@@ -11,4 +11,11 @@ export class Facultad implements FacultadAtributos {
 
     get id(): number { return this._id }
     get nombre(): string { return this._nombre; }
+
+    toPlainObject(): FacultadAtributos {
+        return {
+            id: this.id,
+            nombre: this.nombre,
+        };
+    }
 }
