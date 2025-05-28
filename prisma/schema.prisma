@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -46,20 +40,23 @@ model Paises {
 }
 
 model Planes {
-  id             Int     @id @map("plan")
+  id             Int     @id @default(autoincrement())
+  plan           Int     @map("plan")
   especialidadId Int
   nombre         String?
 }
 
 model Orientaciones {
-  id             Int    @id @map("orientacion")
+  id             Int    @id @default(autoincrement())
+  orientacion    Int    @map("orientacion")
   especialidadId Int
   planId         Int
   nombre         String
 }
 
 model Materias {
-  id             Int    @id @map("materia")
+  id             Int    @id @default(autoincrement())
+  materia        Int    @map("materia")
   especialidadId Int
   planId         Int
   nombre         String

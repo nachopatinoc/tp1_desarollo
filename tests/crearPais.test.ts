@@ -8,7 +8,7 @@ test('deberia crear y gurdar una país en la base de datos', async () => {
     );
     const paisCreado = await PaisService.crearPais(nuevoPais);
 
-    const paisDB = await globalThis.prisma.universidades.findUnique({
+    const paisDB = await globalThis.prisma.paises.findUnique({
         where: { id: paisCreado.id },
     })
 

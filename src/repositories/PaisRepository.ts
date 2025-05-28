@@ -5,5 +5,5 @@ import { BaseRepository } from "./BaseRepository";
 const prisma = new PrismaClient();
 
 export class PaisRepository extends BaseRepository<PaisAtributos> {
-    protected readonly model = prisma.universidades;
+    protected readonly model = prisma.paises;
 }

@@ -1,6 +1,6 @@
 export class BaseValidator {
     protected static validateRequired(value: any, fieldName: string): void {
-        if (!value) {
+        if (value !== 0 && !value) {
             throw new Error(`El campo ${fieldName} es obligatorio`);
         }
     }
@@ -19,7 +19,7 @@ export class BaseValidator {
 
     protected static validatePositive(valor: number, campo: string): void {
         if (valor <= 0) {
-    throw new Error(`El campo ${campo} debe ser un número positivo`);
+            throw new Error(`El campo ${campo} debe ser un número positivo`);
         }
     }
 
