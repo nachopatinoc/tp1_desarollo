@@ -1,6 +1,3 @@
-import { XMLParser } from 'fast-xml-parser';
-import * as fs from 'fs/promises';
-import * as path from 'path';
 import { PaisService } from './services/PaisService';
 import { UniversidadService } from './services/UniversidadService';
 import { FacultadService } from './services/FacultadService';
@@ -19,13 +16,6 @@ import { Plan } from './models/Plan';
 import { Orientacion } from './models/Orientacion';
 import { Materia } from './models/Materia';
 import { Localidad } from './models/Localidad';
-
-async function leerXML(rutaArchivo: string): Promise<any> {
-    const contenido = await fs.readFile(rutaArchivo, 'utf-8');
-    const parser = new XMLParser();
-    const resultado = parser.parse(contenido);
-    return resultado.VFPData._expxml ? resultado.VFPData._expxml : resultado.VFPData._exportar;
-}
 
 async function cargarPaises() {
     const datos = await leerXML(path.join(__dirname, '..', 'data', 'paises.xml'));
