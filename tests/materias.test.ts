@@ -1,15 +1,6 @@
-import { Materia } from "../src/models/Materia";
+import { instanciaMateria as materia } from "./utils";
 
 test("deberia crear una instacia de la clase materia y leer sus atributos", () => {
-    const materia = new Materia(
-
-        8,
-        65,
-        102,
-        "Algebra y Geometría Analítica",
-        1
-    );
-
     expect(materia).toBeTruthy();
     expect(materia.materia).toBe(8);
     expect(materia.especialidadId).toBe(65);
