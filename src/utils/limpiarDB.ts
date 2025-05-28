@@ -34,6 +34,7 @@ export async function limpiarBaseDeDatos() {
         console.log('Tabla Paises limpiada');
 
         console.log('Limpieza de la base de datos completada exitosamente');
+        console.log(' ')
     } catch (error) {
         console.error('Error al limpiar la base de datos:', error);
         throw error;
