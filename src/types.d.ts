@@ -14,20 +14,20 @@ export interface EspecialidadAtributos {
 }
 
 export interface OrientacionAtributos {
-    id: number;
+    orientacion: number;
     nombre: string;
     especialidadId: number;
     planId: number;
 }
 
 export interface PlanAtributos {
-    id: number;
+    plan: number;
     nombre: string;
     especialidadId: number;
 }
 
 export interface MateriaAtributos {
-    id: number;
+    materia: number;
     nombre: string;
     ano?: number | null;
     planId: number;

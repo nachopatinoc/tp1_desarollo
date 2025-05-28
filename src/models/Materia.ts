@@ -3,16 +3,16 @@ import { MateriaValidator } from "../validators/MateriaValidator";
 
 export class Materia implements MateriaAtributos {
     constructor(
-        private readonly _id: number,
+        private readonly _materia: number,
         private readonly _especialidadId: number,
         private readonly _planId: number,
         private readonly _nombre: string,
         private readonly _ano: number | null = null,
     ) {
-        MateriaValidator.validate(_id, _especialidadId, _planId, _nombre, _ano);
+        MateriaValidator.validate(_materia, _especialidadId, _planId, _nombre);
     }
 
-    get id(): number { return this._id }
+    get materia(): number { return this._materia }
     get especialidadId(): number { return this._especialidadId }
     get planId(): number { return this._planId }
     get nombre(): string { return this._nombre }
@@ -20,7 +20,7 @@ export class Materia implements MateriaAtributos {
 
     toPlainObject(): MateriaAtributos {
         return {
-            id: this._id,
+            materia: this._materia,
             nombre: this._nombre,
             ano: this._ano,
             planId: this._planId,

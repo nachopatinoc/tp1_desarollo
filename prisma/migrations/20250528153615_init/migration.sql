@@ -1,44 +1,3 @@
-/*
-  Warnings:
-
-  - You are about to drop the `Especialidad` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `Facultad` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `Grado` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `Localidad` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `Materia` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `Orientacion` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `Pais` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `Plan` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `Universidad` table. If the table is not empty, all the data it contains will be lost.
-
-*/
--- DropTable
-DROP TABLE "Especialidad";
-
--- DropTable
-DROP TABLE "Facultad";
-
--- DropTable
-DROP TABLE "Grado";
-
--- DropTable
-DROP TABLE "Localidad";
-
--- DropTable
-DROP TABLE "Materia";
-
--- DropTable
-DROP TABLE "Orientacion";
-
--- DropTable
-DROP TABLE "Pais";
-
--- DropTable
-DROP TABLE "Plan";
-
--- DropTable
-DROP TABLE "Universidad";
-
 -- CreateTable
 CREATE TABLE "Universidades" (
     "universida" INTEGER NOT NULL,
@@ -91,11 +50,12 @@ CREATE TABLE "Paises" (
 
 -- CreateTable
 CREATE TABLE "Planes" (
+    "id" SERIAL NOT NULL,
     "plan" INTEGER NOT NULL,
     "especialidadId" INTEGER NOT NULL,
     "nombre" TEXT,
 
-    CONSTRAINT "Planes_pkey" PRIMARY KEY ("plan")
+    CONSTRAINT "Planes_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
