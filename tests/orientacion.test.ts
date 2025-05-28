@@ -1,12 +1,6 @@
-import { Orientacion } from "../src/models/Orientacion"
+import { instanciaOrientacion as orientacion } from "./utils"
 
 test("debería crear una instancia de la clase orientacion y leer sus atributos", () => {
-    const orientacion = new Orientacion(
-        1,
-        "Analista de Sistemas",
-        1,
-        1
-    )
 
     expect(orientacion).toBeTruthy()
     expect(orientacion.orientacion).toBe(1)

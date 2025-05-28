@@ -1,13 +1,9 @@
-import fs from "fs";
-import { XMLParser } from "fast-xml-parser";
+import path from "path";
+import { leerXML } from "../src/utils/leerXML";
 
 test("debería importar de facultades.xml y parsea los datos a un objeto JS", async () => {
 
-    const xml = fs.readFileSync("data/facultades.xml", "utf-8");
-    const parser = new XMLParser();
-    const parsed = parser.parse(xml);
-
-    const facultades = parsed.VFPData?._expxml;
+    const facultades = await leerXML(path.join(__dirname, '..', 'data', 'facultades.xml'))
 
     expect(Array.isArray(facultades)).toBe(true);
     expect(facultades.length).toBeGreaterThan(0);

@@ -1,11 +1,7 @@
-import { Universidad } from "../src/models/Universidad";
 import { UniversidadService } from "../src/services/UniversidadService";
+import { instanicaUniversidad as nuevaUniversidad } from "./utils";
 
 test('deberia crear y gurdar una universidad en la abse de datos', async () => {
-    const nuevaUniversidad = new Universidad(
-        1,
-        "Universidad Nacional de Buenos Aires"
-    );
     const universidadCreada = await UniversidadService.crearUniversidad(nuevaUniversidad);
 
     const universidadBD = await globalThis.prisma.universidades.findUnique({

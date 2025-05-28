@@ -1,11 +1,7 @@
-import { Facultad } from "../src/models/Facultad";
 import { FacultadService } from "../src/services/FacultadService";
+import { instanciaFacultad as nuevaFacultad } from "./utils";
 
 test('deberia crear y gurdar una facultad en la base de datos', async () => {
-    const nuevaFacultad = new Facultad(
-        1,
-        "Facultad Regional de San Rafel"
-    );
     const facultadCreada = await FacultadService.crearFacultad(nuevaFacultad);
 
     const facultadBD = await globalThis.prisma.facultades.findUnique({
