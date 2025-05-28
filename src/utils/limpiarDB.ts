@@ -6,7 +6,6 @@ export async function limpiarBaseDeDatos() {
     try {
         console.log('Iniciando limpieza de la base de datos...');
 
-        // Primero eliminamos las tablas con dependencias
         await prisma.materias.deleteMany({});
         console.log('Tabla Materias limpiada');
 
@@ -22,7 +21,6 @@ export async function limpiarBaseDeDatos() {
         await prisma.localidades.deleteMany({});
         console.log('Tabla Localidades limpiada');
 
-        // Luego las tablas sin dependencias
         await prisma.universidades.deleteMany({});
         console.log('Tabla Universidades limpiada');
 

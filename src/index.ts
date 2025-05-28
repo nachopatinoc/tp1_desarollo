@@ -152,9 +152,9 @@ async function cargarLocalidades() {
     for (const dato of localidades) {
         const localidad = new Localidad(
             parseInt(dato.codigo),
-            String(dato.nombre),
+            String(dato.ciudad),
             String(dato.provincia),
-            String(dato.pais)
+            String(dato.pais_del_c)
         );
         await LocalidadService.crearLocalidad(localidad);
     }
