@@ -1,6 +1,6 @@
 import { instanciaMateria as materia } from "./utils";
 
-test("deberia crear una instacia de la clase materia y leer sus atributos", () => {
+test("Deberia crear una instacia de la clase materia y leer sus atributos", () => {
     expect(materia).toBeTruthy();
     expect(materia.materia).toBe(8);
     expect(materia.especialidadId).toBe(65);

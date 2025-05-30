@@ -1,7 +1,7 @@
 import { PaisService } from "../src/services/PaisService";
 import { instanciaPais as nuevoPais } from "./utils";
 
-test('deberia crear y gurdar una país en la base de datos', async () => {
+test('Deberia crear y gurdar una país en la base de datos', async () => {
     const paisCreado = await PaisService.crearPais(nuevoPais);
 
     const paisDB = await globalThis.prisma.paises.findUnique({

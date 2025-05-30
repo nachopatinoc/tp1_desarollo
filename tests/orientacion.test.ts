@@ -1,6 +1,6 @@
 import { instanciaOrientacion as orientacion } from "./utils"
 
-test("debería crear una instancia de la clase orientacion y leer sus atributos", () => {
+test("Debería crear una instancia de la clase orientacion y leer sus atributos", () => {
 
     expect(orientacion).toBeTruthy()
     expect(orientacion.orientacion).toBe(1)

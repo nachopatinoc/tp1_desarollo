@@ -1,7 +1,7 @@
 import path from "path";
 import { leerXML } from "../src/utils/leerXML";
 
-test("debería importar de paises.xml y parsea los datos a un objeto JS", async () => {
+test("Debería importar de paises.xml y parsea los datos a un objeto JS", async () => {
 
     const paises = await leerXML(path.join(__dirname, '..', 'data', 'paises.xml'))
 

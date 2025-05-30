@@ -1,7 +1,7 @@
 import { EspecialidadService } from "../src/services/EspecialidadService";
 import { instanciaEspecialidad as nuevaEspecialidad } from "./utils";
 
-test("deberia crear y guardar una especialidad en la base de datos", async () => {
+test("Deberia crear y guardar una especialidad en la base de datos", async () => {
 
     const especialidadCreada = await EspecialidadService.crearEspecialidad(nuevaEspecialidad);
 

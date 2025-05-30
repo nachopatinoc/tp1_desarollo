@@ -1,7 +1,7 @@
 import { PlanService } from "../src/services/PlanService";
 import { instanicaPlan as nuevoPlan } from "./utils";
 
-test('deberia crear y gurdar un plan en la base de datos', async () => {
+test('Deberia crear y gurdar un plan en la base de datos', async () => {
     const planCreado = await PlanService.crearPlan(nuevoPlan);
 
     const planDB = await globalThis.prisma.planes.findFirst({
