@@ -1,7 +1,7 @@
 import { MateriaService } from "../src/services/MateriasService";
 import { instanciaMateria as nuevaMateria } from "./utils";
 
-test('deberia crear y gurdar una materia en la base de datos', async () => {
+test('Deberia crear y gurdar una materia en la base de datos', async () => {
     const materiaCreada = await MateriaService.crearMateria(nuevaMateria);
 
     const materiasDB = await globalThis.prisma.materias.findFirst({

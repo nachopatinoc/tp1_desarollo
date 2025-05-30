@@ -1,6 +1,6 @@
 import { instanciaLocalidad as localidad } from "./utils";
 
-test("deberia crear una instacia de la clase localidad y leer sus atributos", () => {
+test("Deberia crear una instacia de la clase localidad y leer sus atributos", () => {
 
     expect(localidad).toBeTruthy()
     expect(localidad.id).toBe(1)

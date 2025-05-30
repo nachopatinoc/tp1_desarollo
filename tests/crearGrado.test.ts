@@ -1,7 +1,7 @@
 import { GradoService } from "../src/services/GradoService";
 import { instanciaGrado as nuevoGrado } from "./utils";
 
-test('deberia crear y gurdar un grado en la base de datos', async () => {
+test('Deberia crear y gurdar un grado en la base de datos', async () => {
     const gradoCreado = await GradoService.crearGrado(nuevoGrado);
 
     const gradoDB = await globalThis.prisma.grados.findUnique({
